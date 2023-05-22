@@ -60,6 +60,10 @@ class ItemDetailFragment : Fragment() {
             sellItem.setOnClickListener{
                 viewmodel.sellItem(item)
             }
+
+            deleteItem.setOnClickListener {
+                showConfirmationDialog()
+            }
         }
     }
 
@@ -100,6 +104,7 @@ class ItemDetailFragment : Fragment() {
      * Deletes the current item and navigates to the list fragment.
      */
     private fun deleteItem() {
+        viewmodel.deleteItem(item)
         findNavController().navigateUp()
     }
 
