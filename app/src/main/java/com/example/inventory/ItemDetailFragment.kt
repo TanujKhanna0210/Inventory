@@ -56,6 +56,7 @@ class ItemDetailFragment : Fragment() {
             itemPrice.text = item.getFormattedPrice()
             itemCount.text = item.quantityInStock.toString()
 
+            sellItem.isEnabled = viewmodel.isStockAvailable(item)
             sellItem.setOnClickListener{
                 viewmodel.sellItem(item)
             }
